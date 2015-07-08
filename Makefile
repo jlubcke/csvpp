@@ -10,6 +10,7 @@ help:
 	@echo "docs - generate Sphinx HTML documentation, including API docs"
 	@echo "release - package and upload a release"
 	@echo "sdist - package"
+	@echo "install - install"
 
 clean: clean-build clean-pyc
 
@@ -52,5 +53,8 @@ release: clean
 
 sdist: clean
 	python setup.py sdist
-	python setup.py bdist_wheel upload
+	python setup.py bdist_wheel
 	ls -l dist
+
+install: clean
+	python setup.py install

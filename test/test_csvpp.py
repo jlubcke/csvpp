@@ -5,13 +5,13 @@ import csvpp
 def test_format():
 
     actual = csvpp.csvpp("""\
-        foo, bar
-        1, yayayayayay
+        foo, bar, boink
+        1, yayayayayay, 2
 """)
 
     expected = """\
-        foo, bar
-        1,   yayayayayay
+        foo, bar,         boink
+        1,   yayayayayay, 2
 """
 
     assert expected == actual
