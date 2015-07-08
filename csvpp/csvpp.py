@@ -1,12 +1,6 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
-"""
-Usage: %prog < table.csv
-
-Pretty-print CSV input
-"""
-
 import csv
 from io import StringIO
 from itertools import izip_longest
@@ -36,13 +30,3 @@ def main():
     csv_input = stdin.read().decode('utf-8')
     print csvpp(csv_input).encode('utf-8')
 
-
-def usage():
-    print __doc__.replace("%prog", basename(argv[0]))
-
-
-if __name__ == "__main__":
-    if "--help" in argv or "-h" in argv:
-        usage()
-    else:
-        main()
