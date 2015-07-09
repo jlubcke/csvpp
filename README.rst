@@ -8,15 +8,15 @@ CVS Pretty Printer
 .. image:: https://travis-ci.org/jlubcke/csvpp.png?branch=master
     :target: https://travis-ci.org/jlubcke/csvpp
 
-.. image:: https://pypip.in/d/csvpp/badge.png
-    :target: https://pypi.python.org/pypi/csvpp
-
-
 CSV reformatter to align columns
+
+It scratched my particular itch of a massive amount of test code with snippets
+of CSV data that I wanted to re-format in tidy columns (while retaining the
+indentation).
 
 
 Features
 --------
 
-* TODO
-
+* Reads a CSV file as input and outputs a pretty-printed version with all
+  columns aligned (and indentation retained)
