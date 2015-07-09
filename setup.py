@@ -61,7 +61,7 @@ setup(
     license='MIT',
     zip_safe=False,
     keywords='csvpp',
-    tests_require=open("requirements_test.txt").readlines(),
+    tests_require=['mock', 'pytets'],  # open("requirements_test.txt").readlines(),
     cmdclass = {'test': PyTest},
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',

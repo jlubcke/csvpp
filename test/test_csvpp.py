@@ -24,14 +24,14 @@ def test_format():
 @patch('sys.stdout')
 def test_cmdline(fake_stdout, fake_stdin):
 
-    fake_stdin.read.return_value = """\
+    fake_stdin.read.return_value = b"""\
             foo, bar
             1, 2
 """
 
     csvpp.main()
 
-    fake_stdout.write.assert_called_with("""\
+    fake_stdout.write.assert_called_with(b"""\
             foo, bar
             1,   2
 """)
