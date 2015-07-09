@@ -3,9 +3,14 @@
 
 import csv
 from io import StringIO
-from itertools import izip_longest, count
+from itertools import count
 import sys
-
+try:
+    # Python 2
+    from itertools import izip_longest
+except ImportError:
+    # Python 3
+    from itertools import zip_longest as izip_longest
 
 def csvpp(csv_input):
 
@@ -24,7 +29,7 @@ def csvpp(csv_input):
         last_column = len(line) - 1
         for value, max_width, column in zip(line, max_widths, count()):
             value = value.strip()
-            result.write(unicode(value))
+            result.write(u"" + value)
             if column != last_column:
                 result.write(u", ")
                 result.write(u" " * (max_width - len(value)))

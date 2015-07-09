@@ -24,4 +24,4 @@ If you have any suggestions or questions about **CVS Pretty Printer** feel free 
 at johan@lubcke.se.
 
 If you encounter any errors or problems with **CVS Pretty Printer**, please let me know!
-Open an Issue at the GitHub http://github.com/johanlu/csvpp main repository.
+Open an Issue at the GitHub http://github.com/jlubcke/csvpp main repository.

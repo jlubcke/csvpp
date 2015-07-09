@@ -49,7 +49,7 @@ setup(
     long_description=readme + '\n\n' + doclink + '\n\n' + history,
     author='Johan Lübcke',
     author_email='johan@lubcke.se',
-    url='https://github.com/johanlu/csvpp',
+    url='https://github.com/jlubcke/csvpp',
     packages=[
         'csvpp',
     ],
