@@ -18,7 +18,7 @@ def csvpp(csv_input):
     max_indent = 0
     for line in csv.reader(StringIO(csv_input)):
         widths = [len(s.strip()) for s in line]
-        max_widths = map(max, izip_longest(max_widths, widths, fillvalue=0))
+        max_widths = list(map(max, izip_longest(max_widths, widths, fillvalue=0)))
         indent = len(line[0]) - len(line[0].lstrip())
         max_indent = max(max_indent, indent)
 
