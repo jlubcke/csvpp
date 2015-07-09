@@ -4,8 +4,7 @@
 import csv
 from io import StringIO
 from itertools import izip_longest
-from os.path import basename
-from sys import argv, stdin
+import sys
 
 
 def csvpp(csv_input):
@@ -27,6 +26,6 @@ def csvpp(csv_input):
 
 
 def main():
-    csv_input = stdin.read().decode('utf-8')
-    print csvpp(csv_input).encode('utf-8')
+    csv_input = sys.stdin.read().decode('utf-8')
+    sys.stdout.write(csvpp(csv_input).encode('utf-8'))
 

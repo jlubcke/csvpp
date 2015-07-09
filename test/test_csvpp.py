@@ -1,4 +1,7 @@
 from __future__ import unicode_literals
+
+from mock import patch
+
 import csvpp
 
 
@@ -15,3 +18,20 @@ def test_format():
 """
 
     assert expected == actual
+
+
+@patch('sys.stdin')
+@patch('sys.stdout')
+def test_cmdline(fake_stdout, fake_stdin):
+
+    fake_stdin.read.return_value = """\
+            foo, bar
+            1, 2
+"""
+
+    csvpp.main()
+
+    fake_stdout.write.assert_called_with("""\
+            foo, bar
+            1,   2
+""")
