@@ -3,7 +3,7 @@
 
 import os
 import sys
-
+import re
 
 try:
     from setuptools import setup
@@ -23,6 +23,15 @@ Documentation
 
 The full documentation is at http://csvpp.rtfd.org."""
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
+
+
+def read_version():
+    with open(os.path.join('csvpp', '__init__.py')) as f:
+        m = re.search(r'''__version__\s*=\s*['"]([^'"]*)['"]''', f.read())
+        if m:
+            return m.group(1)
+        raise ValueError("couldn't find version")
+
 
 class PyTest(TestCommand):
     user_options = [('pytest-args=', 'a', "Arguments to pass to py.test")]
@@ -44,7 +53,7 @@ class PyTest(TestCommand):
 
 setup(
     name='csvpp',
-    version='0.1.0',
+    version=read_version(),
     description='CSV reformatter to align columns',
     long_description=readme + '\n\n' + doclink + '\n\n' + history,
     author='Johan Lübcke',
