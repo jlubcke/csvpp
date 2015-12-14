@@ -1,7 +1,12 @@
 language: python
 python:
-  - "2.7"
-  - "3.4"
-
+- '2.7'
+- '3.4'
 script: py.test
-
+deploy:
+  provider: pypi
+  user: j_lubcke
+  password:
+    secure: EpG+AhF5Owd7LHCkFxxuIy15QC2lD0PeCK4JTZ5S2E1Tf6VnK1e/ZpURmiIbbovbE/ciq5Ctr1f1BO0iT/RAvYeGivG/6yqEjgz+xSlg7YTr/wl5UEq98FwBl2Kh6ZD3M+C3C/oRW/6C+OfCOkydBJLkXFI/6AQpkuBqlNe+hVfpOVR5eqHXeGUAdSwwEVJjYT2ka9v7N8Js9dG/BikLyqLGMnuP6Gt1Mj+/tEOF8b/xX0fPSqMwMDW//WeHGJeydkmpLubjAUjPRK0+S5E30JLOUJ39WI1YY4xOUoFXjWKzGguoEqxGxrtT5jy0F9ECENuBg3cspwdNvjIPTSJRK6vGfittIR5mEtcEcwko7sGBSBDalHAoeQPcNXUv4MSQVCTWc0+c1KP0xeg+3iIN5hI5CzdMj4SheeOq8a30i+E64owifOl7DgfqsmSZIuMv7fI3YH2coUVNZzQGFMBq3rJ71C0GxYhazQ05uiAAJVV7xdvA8IwohBjF/Xuqaz2p+5NQy7uoK/tiVBzxm7cM5Lws+7lnDOH5VwCFx8R8VIHdEFbVvhCKLNBdbsKu7fFH+tmXDxoZjmDTSpfkzGlL5N+I9dDZYX+hpbQdcUCDZp//kkQkoJ5589hzqvB6bFyzVT+V1KlO4gQrz9pVM1Fe7/e/Vnp+o21R0QRcmFxi71w=
+  on:
+    tags: true
